@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ Heart Disease Prediction</h1>
+
+<form action="/predict" method="POST">
+
+<label>Age</label>
+<input type="number" name="age" required>
+
+<label>Gender</label>
+<select name="sex">
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+</select>
+
+<label>Chest Pain Type</label>
+<select name="cp">
+    <option value="0">Typical Angina</option>
+    <option value="1">Atypical Angina</option>
+    <option value="2">Non-Anginal Pain</option>
+    <option value="3">Asymptomatic</option>
+</select>
+
+<label>Resting Blood Pressure</label>
+<input type="number" name="trestbps" required>
+
+<label>Cholesterol</label>
+<input type="number" name="chol" required>
+
+<label>Fasting Blood Sugar</label>
+<select name="fbs">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select>
+
+<label>Rest ECG</label>
+<select name="restecg">
+    <option value="0">Normal</option>
+    <option value="1">ST-T Abnormality</option>
+    <option value="2">Left Ventricular Hypertrophy</option>
+</select>
+
+<label>Maximum Heart Rate</label>
+<input type="number" name="thalach" required>
+
+<label>Exercise Induced Angina</label>
+<select name="exang">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select>
+
+<label>Old Peak</label>
+<input type="number" step="0.1" name="oldpeak" required>
+
+<label>Slope</label>
+<select name="slope">
+    <option value="0">Downsloping</option>
+    <option value="1">Flat</option>
+    <option value="2">Upsloping</option>
+</select>
+
+<label>Number of Major Vessels (CA)</label>
+<input type="number" name="ca" min="0" max="4" required>
+
+<label>Thal</label>
+<select name="thal">
+    <option value="1">Normal</option>
+    <option value="2">Fixed Defect</option>
+    <option value="3">Reversible Defect</option>
+</select>
+
+<button type="submit">Predict Heart Disease</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
