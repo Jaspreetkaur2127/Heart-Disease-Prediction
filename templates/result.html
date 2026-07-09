@@ -2,32 +2,61 @@
 <html>
 
 <head>
-
-<title>Prediction Result</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Prediction Result</h1>
+    <h1>❤️ Heart Disease Prediction</h1>
 
-<div class="result">
+    <div class="result-card">
 
-{{ prediction }}
+        <h2>{{ prediction }}</h2>
 
-</div>
+        <hr>
 
-<br>
+        <h3>Risk Level</h3>
 
-<center>
+        <p class="risk">{{ risk }}</p>
 
-<a href="/">Predict Again</a>
+        <h3>Algorithm Used</h3>
 
-</center>
+        <p>Random Forest Classifier</p>
+
+        <h3>Model Accuracy</h3>
+
+        <p>{{ accuracy }}%</p>
+
+        <h3>Health Recommendations</h3>
+
+        <ul>
+            {% for item in recommendations %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+        <p class="disclaimer">
+
+            <strong>Medical Disclaimer</strong><br><br>
+
+            This prediction is generated using a Machine Learning model
+            and should only be used for preliminary assessment.
+            It is not a substitute for professional medical diagnosis,
+            treatment or consultation. Always consult a qualified
+            healthcare professional.
+
+        </p>
+
+    </div>
+
+    <br>
+
+    <a href="/">← Predict Again</a>
 
 </div>
 
